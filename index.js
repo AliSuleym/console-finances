@@ -87,6 +87,7 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
+
 console.log("Console Finances")         
 console.log("-------------------------")
 
@@ -97,16 +98,16 @@ console.log("-------------------------")
   console.log("Total Months: " + total_Months);       
 
 
-  //netTotalProfitLoss = the sum amounts of all months
+  //netTotal = the sum amounts of all months
    
-  let netTotalProfitLoss = 0;        
+  let netTotal = 0;        
   
   for (let i = 0; i < totalMonths; i++) {
 
-      netTotalProfitLoss += finances[i][1];        
+      netTotal += finances[i][1];        
   }
 
-  console.log("Total: " + netTotalProfitLoss);  
+  console.log("Total: " + netTotal);  
 
   //Find the total average changes and the total number of months  
   
