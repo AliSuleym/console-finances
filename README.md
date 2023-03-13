@@ -15,4 +15,14 @@ The task is to write JavaScript code that analyzes the records to calculate each
 Deployed application: https://github.com/AliSuleym/console-finances/
                       
 
-The results were then printed to the console
+## Installation
+
+N/A
+
+## Usage
+
+Open up index.html in a browser and use inspect element to view the analysis in the console 
+
+## License
+
+MIT license
