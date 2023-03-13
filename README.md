@@ -1,3 +1,4 @@
+![Console-Finances](https://user-images.githubusercontent.com/116298145/224793099-869a452e-fe61-4ec4-9c7a-6b59f2d1cc4a.png)
 # Console-Finances
 
 ## Description
