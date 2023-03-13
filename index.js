@@ -89,69 +89,71 @@ var finances = [
 
 console.log("Console Finances")         
 console.log("-------------------------")
-  
-    //TotalMonths = length of the array
-    
-  let total_Months = finances.length-61; 
-  let totalMonths = finances.length;   
 
-  console.log("Total Months: " + total_Months);        
-  
+   //totalMonths = length of the array
+    let total_Months = finances.length-61;
+  let totalMonths = finances.length;
+
+  console.log("Total Months: " + total_Months);       
+
+
   //netTotalProfitLoss = the sum amounts of all months
    
-  let netTotalProfitLoss = 0;         
-
+  let netTotalProfitLoss = 0;        
+  
   for (let i = 0; i < totalMonths; i++) {
 
       netTotalProfitLoss += finances[i][1];        
   }
 
-  console.log("Total: " + netTotalProfitLoss); 
+  console.log("Total: " + netTotalProfitLoss);  
 
   //Find the total average changes and the total number of months  
-                
-  let dateReversed = [];        
+  
+          
+  let dateReversed = [];       
 
-  let amountReversed = [];      
+  let amountReversed = [];    
 
   //Create a for loop to reverse the order of the finance array and extract the data
+  
   for (let i = totalMonths - 1; i >= 0; i--) {
         const[date, amount] = finances[i];  
-        dateReversed.push(date)         
-        amountReversed.push(amount);     
+        
+		dateReversed.push(date)           
+
+        amountReversed.push(amount);      
 
       }
   
-
   let avgChanges =[]            
 
-  let totalAvgChanges = 0      
+  let totalAvgChanges = 0       
 
   // Use a for loop to calulate the monthly difference and sum them up
   for (let i = 0; i < totalMonths - 1; i++) {
 
     avgChanges.push(amountReversed[i] - amountReversed[i+1]);    
   
-    totalAvgChanges += avgChanges[i];       
-  }  
-
+    totalAvgChanges += avgChanges[i];      
+  }
+  
   let totalAvgProfitLoss = totalAvgChanges / avgChanges.length;         
 
-  console.log("Average  Change: " + totalAvgProfitLoss.toFixed(2));        
+  console.log("Average Change: " + totalAvgProfitLoss.toFixed(2));
 
-   //Find the highest amount change from month to month  
+  //Find the highest amount change from month to month
 
-  let greatestProfitAmount = Math.max(...avgChanges); 
+  let greatestProfitAmount = Math.max(...avgChanges);       
+  // find the highest value from the avgChanges array  
 
-  let greatestProfitDate = dateReversed[61];        
+  let greatestProfitDate = dateReversed[60];        
 
-  console.log("Greatest Increase in Profits: " + greatestProfitDate + " ($"+ greatestProfitAmount + ")")
+  console.log("Greatest Increase in Profits: " + greatestProfitDate + " ($"+ greatestProfitAmount + ")")        
+   //Find the lowest negative amount change from month to month  
+
+  let greatestLossAmount = Math.min(...avgChanges);      
   
-  //Find the lowest negative amount change from month to month  
-
-  let greatestLossAmount = Math.min(...avgChanges);   
-  
-  // Retrieve the index of the lowest change value   
   greatestLossDate = dateReversed[41];         
 
   console.log("Greatest Decrease in Profits: " + greatestLossDate + " ($" + greatestLossAmount + ")" )         
